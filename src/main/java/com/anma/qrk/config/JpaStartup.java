@@ -8,7 +8,7 @@ import javax.inject.Singleton;
 import javax.transaction.Transactional;
 
 @Singleton
-public class Startup {
+public class JpaStartup {
 
     @Transactional
     public void loadUsers(@Observes StartupEvent evt) {
