@@ -33,7 +33,7 @@ public class CityResource {
         ResultSet resultSet = statement.getResultSet();
         resultSet.next();
         City city = new City();
-        city.setId(UUID.fromString(resultSet.getString("id")));
+        city.setId(Integer.parseInt(resultSet.getString("id")));
         city.setName(resultSet.getString("name"));
         city.setPopulation(resultSet.getInt("population"));
         return city;
@@ -54,13 +54,13 @@ public class CityResource {
 
             resultSet.next();
             City city = new City();
-            city.setId(UUID.fromString(resultSet.getString("id")));
+            city.setId(Integer.parseInt(resultSet.getString("id")));
             city.setName(resultSet.getString("name"));
             city.setPopulation(resultSet.getInt("population"));
             cities.add(city);
             while (resultSet.next()) {
                 City city2 = new City();
-                city2.setId(UUID.fromString(resultSet.getString("id")));
+                city2.setId(Integer.parseInt(resultSet.getString("id")));
                 city2.setName(resultSet.getString("name"));
                 city2.setPopulation(resultSet.getInt("population"));
                 cities.add(city2);
